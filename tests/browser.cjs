@@ -1,4 +1,4 @@
-const {chromium}=require('C:/Users/User/OneDrive/Desktop/홈페이지 만들기/_작업자료/qa/node_modules/playwright');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const fs=require('node:fs');
 (async()=>{
  const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
